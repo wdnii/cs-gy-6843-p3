@@ -14,7 +14,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     # Fill in start
     clientSocket = socket(AF_INET, SOCK_STREAM)
     rip=gethostbyname(mailserver)
-    clientSocket.connect((rip, port))
+    clientSocket.connect(("", port))
     # Fill in end
 
     recv = clientSocket.recv(1024).decode()
@@ -68,7 +68,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
 
     # Send message data.
     # Fill in start
-    c = 'From: "Dean" <dean.norris@gmail.com>\r\nTo: "Dean" <dean@norrispty.com>\r\nSubject: Test\r\n\r\nTest One.\r\n'
+    c = '\rn\n From: "Dean" <dean.norris@gmail.com>\r\nTo: "Dean" <dean@norrispty.com>\r\nSubject: Test\r\n\r\nTest One.\r\n'
     clientSocket.send(c.encode())
 
     # Fill in end
