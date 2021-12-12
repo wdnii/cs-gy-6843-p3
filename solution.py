@@ -24,7 +24,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
         sys.exit()
 
     # Send HELO command and print server response.
-    heloCommand = 'HELO Alice\r\n'
+    heloCommand = 'HELO smtp.google.com\r\n'
     clientSocket.send(heloCommand.encode())
     recv1 = clientSocket.recv(1024).decode()
     #print(recv1)
