@@ -12,7 +12,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     # Create socket called clientSocket and establish a TCP connection with mailserver and port
 
     # Fill in start
-    clientSocket = socket(AF_NET, SOCK_STREAM)
+    clientSocket = socket(AF_INET, SOCK_STREAM)
     rip=gethostbyname(mailserver)
     clientSocket.connect((rip, port))
     # Fill in end
@@ -103,5 +103,3 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
 
 if __name__ == '__main__':
     smtp_client(1025, '127.0.0.1')
-SMTP_Server_skeleton.py
-Displaying SMTP_Server_skeleton.py.
