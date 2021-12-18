@@ -79,8 +79,11 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
 
     # Message ends with a single period.
     # Fill in start
-    clientSocket.send(endmsg.encode())
+    c = '\r\n.\r\n'
+    clientSocket.send(c.encode())
+    #clientSocket.send(endmsg.encode())
     #print(endmsg)
+
     recv1 = clientSocket.recv(1024).decode()
     #print(recv1)
     #    if recv1[:3] != '250':
